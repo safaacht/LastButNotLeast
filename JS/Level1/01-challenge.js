@@ -7,6 +7,7 @@ function mean(notes){
     let length=notes.length ;
     let status =false;
     let max=notes[0];
+    let min=notes[0];
     
     sum=notes.reduce((acc,n)=> acc+n ,0)
     
@@ -17,15 +18,23 @@ function mean(notes){
     if(moyenne>= 10){
          status=true;
     }
-    console.log(status);
+    // console.log(status);
+    // return moyenne;
 
-    return moyenne;
+
+    // ch3: return the maximum number of the array
+    notes.forEach(note => {
+        if(note>max){
+            max=note
+        } 
+    });
+    return max
+
+    // ch4: return the minimum number of the array
 }
 console.log(mean(notes));
 
 
-// ch3: return the maximum number of the array
-// ch4: return the minimum number of the array
 // ch5: return the median of the array
 // ch6: return the second largest number
 // ch7: return array with numbers sorted in ascending order
