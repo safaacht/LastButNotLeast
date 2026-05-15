@@ -1,6 +1,20 @@
 const notes = [1, 10, 4, 5, 7]
 
 // ch1: calculate the mean of the array
+function mean(notes){
+    let sum=0;
+    let moyenne=0;
+    let length=notes.length ;
+    
+    sum=notes.reduce((acc,n)=> acc+n ,0)
+    
+    moyenne= sum / length;
+
+    return moyenne;
+}
+console.log(mean(notes));
+
+
 // ch2: return true if the mean is major or equal to 10 else return false
 // ch3: return the maximum number of the array
 // ch4: return the minimum number of the array
