@@ -28,9 +28,18 @@ function mean(notes){
             max=note
         } 
     });
-    return max
+    console.log(max);
+    
+    
 
     // ch4: return the minimum number of the array
+    notes.forEach(note => {
+        if(note<min){
+            min=note
+        } 
+    });
+    console.log(min);
+    
 }
 console.log(mean(notes));
 
