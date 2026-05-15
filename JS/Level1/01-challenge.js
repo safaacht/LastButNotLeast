@@ -5,17 +5,25 @@ function mean(notes){
     let sum=0;
     let moyenne=0;
     let length=notes.length ;
+    let status =false;
+    let max=notes[0];
     
     sum=notes.reduce((acc,n)=> acc+n ,0)
     
     moyenne= sum / length;
+    
+    // ch2: return true if the mean is major or equal to 10 else return false
+
+    if(moyenne>= 10){
+         status=true;
+    }
+    console.log(status);
 
     return moyenne;
 }
 console.log(mean(notes));
 
 
-// ch2: return true if the mean is major or equal to 10 else return false
 // ch3: return the maximum number of the array
 // ch4: return the minimum number of the array
 // ch5: return the median of the array
