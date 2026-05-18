@@ -1,4 +1,4 @@
-const notes = [1, 10, 4, 5, 7]
+const notes = [1, 10, 14, 5, 7,2]
 
 // ch1: calculate the mean of the array
 function mean(notes){
@@ -28,7 +28,7 @@ function mean(notes){
             max=note
         } 
     });
-    console.log(max);
+    // console.log(max);
     
     
 
@@ -38,17 +38,65 @@ function mean(notes){
             min=note
         } 
     });
-    console.log(min);
+    // console.log(min);
+    
+    // ch5: return the median of the array +  ch7: return array with numbers sorted in ascending order
+
+
+    let temp=0
+
+    for(let i=0 ; i<notes.length-1; i++){
+        for(let j=i+1 ; j< notes.length ; j++){
+            if(notes[i]> notes[j]){
+                temp=notes[i]
+                notes[i]=notes[j]
+                notes[j] = temp
+            }
+        }
+    } 
+    console.log(notes);
+
+    let median=0;
+    
+    if(notes.length % 2 === 1){
+        median= notes[(notes.length-1)/2];
+        console.log(median); 
+    }else{
+        let med1 = notes[(notes.length/2) -1];
+        let med2 = notes[notes.length/2];
+        median = (med1 + med2) /2;
+    }
+    console.log(median);
+
+    // ch6: return the second largest number + ch8: return array with numbers sorted in descending order
+    
+    for(let i=0 ; i<notes.length-1; i++){
+        for(let j=i+1 ; j< notes.length ; j++){
+            if(notes[i]< notes[j]){
+                temp=notes[i]
+                notes[i]=notes[j]
+                notes[j] = temp
+            }
+        }
+    }  
+    let sLargeNum= notes[1]
+    console.log("second large num :", sLargeNum);
+
+// ch9: return the index of all the numbers that are major or equal to 10 
+    notes.forEach((note,index)=>{
+        if(note>= 10){
+            console.log({
+                index,note
+            });
+            
+        }
+    })
     
 }
 console.log(mean(notes));
 
 
-// ch5: return the median of the array
-// ch6: return the second largest number
-// ch7: return array with numbers sorted in ascending order
-// ch8: return array with numbers sorted in descending order
-// ch9: return the index of all the numbers that are major or equal to 10 
+
 // ch10: return the dot product of the array
 // ch11: return array with product of each two following numbers
 // ch12: return array with factorial of each number
